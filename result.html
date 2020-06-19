@@ -1,0 +1,27 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Telegram chat word cloud</title>
+  <style type="text/css" media="screen">
+  /* NotoColorEmoji font for emojis https://github.com/googlefonts/noto-emoji */
+  @font-face {
+    font-family: NotoColorEmoji;
+    src:url("./font/NotoColorEmoji.ttf");
+  }
+  #word-cloud{
+    font-family: Calibri, NotoColorEmoji;
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+  }
+  </style>
+</head>
+<body>
+  <!-- This is based on https://codepen.io/stevn/pen/JdwNgw with some modifications. -->
+  <div id="word-cloud"></div>
+  <script> var words = [{ word: ":D", freq: 62.6418390534633 },{ word: "ei", freq: 59.632206063502295 },{ word: "joo", freq: 43.45112196480086 },{ word: "en", freq: 38.67815921162743 },{ word: "kyl", freq: 38.36665218650175 },{ word: "no", freq: 38 },{ word: "nyt", freq: 37.36308338453881 },{ word: "sit", freq: 34.9857113690718 },{ word: "joku", freq: 34.92849839314596 },{ word: "siis", freq: 32.49615361854384 },{ word: "nii", freq: 31.240998703626616 },{ word: "mitä", freq: 29.0516780926679 },{ word: "niin", freq: 28.5657137141714 },{ word: "vois", freq: 28 },{ word: "jo", freq: 27.92848008753788 },{ word: "voi", freq: 26.5329983228432 },{ word: "ihan", freq: 26.30589287593181 },{ word: "aika", freq: 25.059928172283335 },{ word: "kans", freq: 24.899799195977465 },{ word: "-", freq: 24.576411454889016 },{ word: "viel", freq: 24.331050121192877 },{ word: "xd", freq: 23.83275057562597 },{ word: "hyvä", freq: 23.83275057562597 },{ word: "kaikki", freq: 23.664319132398465 },{ word: "ni", freq: 23.49468024894146 },{ word: "just", freq: 22.978250586152114 },{ word: "siel", freq: 22.978250586152114 },{ word: "tulee", freq: 22.538855339169288 },{ word: "sinne", freq: 21.817424229271428 },{ word: "pitää", freq: 21.633307652783937 },{ word: "tulla", freq: 21.2602916254693 },{ word: "iha", freq: 21.166010488516726 },{ word: "hei", freq: 20.784609690826528 },{ word: "kys", freq: 20.09975124224178 },{ word: "menee", freq: 19.183326093250876 },{ word: "ainaki", freq: 18.973665961010276 },{ word: "vähän", freq: 18.867962264113206 },{ word: "vähä", freq: 18.867962264113206 },{ word: "saa", freq: 18.547236990991408 },{ word: "miten", freq: 18.547236990991408 },{ word: "ehkä", freq: 18.33030277982336 },{ word: "tiiä", freq: 18.33030277982336 },{ word: "okei", freq: 18.2208671582886 },{ word: "ees", freq: 18.2208671582886 },{ word: "tänää", freq: 18 },{ word: "jotai", freq: 17.88854381999832 },{ word: "ok", freq: 17.776388834631177 },{ word: "tehä", freq: 17.776388834631177 },{ word: "varmaa", freq: 17.663521732655695 },{ word: "😂", freq: 17.663521732655695 },{ word: "vittu", freq: 17.663521732655695 },{ word: "vielä", freq: 17.549928774784245 },{ word: "joskus", freq: 17.435595774162696 },{ word: "", freq: 17.435595774162696 },{ word: "kyllä", freq: 17.435595774162696 },{ word: "miks", freq: 17.320508075688775 },{ word: "harva", freq: 17.204650534085253 },{ word: "mennä", freq: 17.204650534085253 },{ word: "voin", freq: 17.204650534085253 },{ word: "tuun", freq: 17.08800749063506 },{ word: "mitää", freq: 16.97056274847714 },{ word: "tääl", freq: 16.97056274847714 },{ word: "mis", freq: 16.852299546352718 },{ word: "🤔", freq: 16.73320053068151 },{ word: "/", freq: 16.73320053068151 },{ word: "tuu", freq: 16.73320053068151 },{ word: "enää", freq: 16.492422502470642 },{ word: "ai", freq: 16.492422502470642 },{ word: "myös", freq: 16.1245154965971 },{ word: "missä", freq: 16.1245154965971 },{ word: "/roi", freq: 16 },{ word: "laittaa", freq: 15.874507866387544 },{ word: "eiks", freq: 15.748015748023622 },{ word: "ite", freq: 15.620499351813308 },{ word: "tänään", freq: 15.620499351813308 },{ word: "ottaa", freq: 15.491933384829668 },{ word: "mitään", freq: 15.491933384829668 },{ word: "jotain", freq: 15.491933384829668 },{ word: "voisin", freq: 15.362291495737216 },{ word: "tuli", freq: 15.362291495737216 },{ word: "jep", freq: 15.362291495737216 },{ word: "😂😂", freq: 15.231546211727817 },{ word: "aa", freq: 15.231546211727817 },{ word: "ton", freq: 15.231546211727817 },{ word: ":(", freq: 15.231546211727817 },{ word: "pitäis", freq: 14.966629547095765 },{ word: "lähtee", freq: 14.966629547095765 },{ word: "vitun", freq: 14.966629547095765 },{ word: "kai", freq: 14.832396974191326 },{ word: "wow", freq: 14.832396974191326 },{ word: "oikeesti", freq: 14.832396974191326 },{ word: ":DD", freq: 14.696938456699069 },{ word: "koko", freq: 14.696938456699069 },{ word: "uusi", freq: 14.422205101855956 },{ word: "vissii", freq: 14.422205101855956 },{ word: "varmaan", freq: 14.422205101855956 },{ word: "salee", freq: 14.2828568570857 },{ word: "paljon", freq: 14.2828568570857 },{ word: "nice", freq: 14.142135623730951 },{ word: "aina", freq: 14.142135623730951 }] </script>
+  <script src="./script.js"></script>
+</body>
+</html>
